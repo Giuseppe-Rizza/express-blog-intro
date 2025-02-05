@@ -12,6 +12,7 @@ const app = express();
 // Do una porta (per questo tipo di applicazioni si usa la porta 3000)
 const port = 3000;
 
+// Definisco l'uso di una cartella per i file statici
 // A questa funzione passo come argomento il middleware nativo di express, mentre alla funzione static indico come argomento il nome della cartella che conterrà i file statici che diventeranno raggiungibili anche verso l'esterno
 // N.B. SIGNIFICATO: RENDI POSSIBILE DI RAGGIUNGERE LA CARTELLA PUBLIC ED I FILE CHE CI SONO ALL'INTERNO VERSO L'ESTERNO
 app.use(express.static("public"));
@@ -26,6 +27,46 @@ app.get("/", (req, res) => {
     // Se l'utente finisce sull'endpoint / gli ritorna un testo con scritto "Server del mio blog"
     // LA RISPOSTA (RES) PREVEDE UN METODO CHE SI CHIAMA SEND NEL QUALE POSSO INVIARE UNA STRINGA
     res.send("Server del mio blog");
+});
+
+// Definisco la rotta /bacheca
+app.get("/bacheca", (req, res) => {
+    // Creo array con almeno 5 post, per ognuno indico titolo, contenuto, immagine e tags
+    const posts = [
+        {
+            "titolo": "ciambellone",
+            "contenuto": "La ciambella ideale",
+            "immagine": "imgs/ciambellone.jpeg",
+            "tags": ["uova", "farina", "colazione"],
+        },
+        {
+            "titolo": "cracker_barbabietola",
+            "contenuto": "Il cracker salutare",
+            "immagine": "imgs/cracker_barbabietola.jpeg",
+            "tags": ["barbabietola", "cracker", "snack"],
+        },
+        {
+            "titolo": "pane_fritto_dolce",
+            "contenuto": "Il pane fritto",
+            "immagine": "imgs/pane_fritto_dolce.jpeg",
+            "tags": ["lievito", "farina", "pane"],
+        },
+        {
+            "titolo": "pasta_barbabietola",
+            "contenuto": "La pasta viola",
+            "immagine": "imgs/pasta_barbabietola.jpeg",
+            "tags": ["grano", "pasta", "primo"],
+        },
+        {
+            "titolo": "torta_paesana",
+            "contenuto": "La torta come una volta",
+            "immagine": "imgs/torta_paesana.jpeg",
+            "tags": ["cioccolato", "pinoli", "dessert"],
+        },
+    ];
+
+    // Ritorno l'array di post in formato Json
+    res.json(posts);
 });
   
 // Avvio il server, mettendolo in ascolto sulla porta indicata
