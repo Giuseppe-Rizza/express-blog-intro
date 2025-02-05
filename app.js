@@ -12,6 +12,10 @@ const app = express();
 // Do una porta (per questo tipo di applicazioni si usa la porta 3000)
 const port = 3000;
 
+// A questa funzione passo come argomento il middleware nativo di express, mentre alla funzione static indico come argomento il nome della cartella che conterrà i file statici che diventeranno raggiungibili anche verso l'esterno
+// N.B. SIGNIFICATO: RENDI POSSIBILE DI RAGGIUNGERE LA CARTELLA PUBLIC ED I FILE CHE CI SONO ALL'INTERNO VERSO L'ESTERNO
+app.use(express.static("public"));
+
 // Definisco la prima rotta /, che è il punto di entrata di qualsiasi rotta
 // Le rotte leggono l'endpoint utilizzato per vedere quale specifica parte dell'API è richiesta tra quelle previste e restituiscono delle risposte sensate (ogni rotta è associata ad un'azione specifica che il server deve compiere: es. definisco un indirizzo e rispondo in un certo modo, un altro indirizzo e rispondo in un altro modo, ecc.)
 // N.B.: la rotta è la corrispondenza sul server dell'endpoint che abbiamo utilizzato finora (LA ROTTA È QUELLA CHE VA A CATTURARE L'ENDPOINT)
