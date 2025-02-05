@@ -36,31 +36,31 @@ app.get("/bacheca", (req, res) => {
         {
             "titolo": "ciambellone",
             "contenuto": "La ciambella ideale",
-            "immagine": "imgs/ciambellone.jpeg",
+            "immagine": "http://localhost:3000/imgs/ciambellone.jpeg",
             "tags": ["uova", "farina", "colazione"],
         },
         {
             "titolo": "cracker_barbabietola",
             "contenuto": "Il cracker salutare",
-            "immagine": "imgs/cracker_barbabietola.jpeg",
+            "immagine": "http://localhost:3000/imgs/cracker_barbabietola.jpeg",
             "tags": ["barbabietola", "cracker", "snack"],
         },
         {
             "titolo": "pane_fritto_dolce",
             "contenuto": "Il pane fritto",
-            "immagine": "imgs/pane_fritto_dolce.jpeg",
+            "immagine": "http://localhost:3000/imgs/pane_fritto_dolce.jpeg",
             "tags": ["lievito", "farina", "pane"],
         },
         {
             "titolo": "pasta_barbabietola",
             "contenuto": "La pasta viola",
-            "immagine": "imgs/pasta_barbabietola.jpeg",
+            "immagine": "http://localhost:3000/imgs/pasta_barbabietola.jpeg",
             "tags": ["grano", "pasta", "primo"],
         },
         {
             "titolo": "torta_paesana",
             "contenuto": "La torta come una volta",
-            "immagine": "imgs/torta_paesana.jpeg",
+            "immagine": "http://localhost:3000/imgs/torta_paesana.jpeg",
             "tags": ["cioccolato", "pinoli", "dessert"],
         },
     ];
